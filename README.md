@@ -38,3 +38,41 @@ ReactDOM.render(
   </div>,
   document.getElementById("root")
 )
+
+
+### map,filter,Reduce ###
+function callback(x){
+  return x*2;
+}
+function.map(callbackfunction);
+const newnumbers = number.map(funciton(x){
+  return x*2
+})
+
+
+const newnumbers = numbers.filter(function(x){
+  return x > 30;
+})
+
+var newsum = numbers.reduce(function(accumlator,curr){
+  return accumlator + curr;
+})
+
+
+const num = numbers.find(function(numb){
+  return numb > 10;
+})
+
+### State ###
+Userinterface = f(state) (eg : water is ice at temperature of -10* but water at temperature of 60*)
+
+
+const stylechange = {text-decoration : line-through}
+
+funtion App=()=>{
+  return (
+    var done = false;
+    <p style = {done ? stylechange : null}>task done</p>
+  )
+}
+Here the userinterface depended on the state called done;

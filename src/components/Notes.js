@@ -1,14 +1,13 @@
 import React from "react";
 
-
-const Notes =()=>{
+const Notes =(props)=>{
     return (
         <div className="note">
             <h1>
-                title for the note
+                {props.title}
             </h1>
             <p>
-                para for the note
+                {props.content}
             </p>
         </div>
     )
