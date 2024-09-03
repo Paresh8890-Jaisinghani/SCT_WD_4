@@ -76,3 +76,25 @@ funtion App=()=>{
   )
 }
 Here the userinterface depended on the state called done;
+
+### React Hooks ###
+### usestate ###
+import React from "react";
+import { useState } from "react";
+
+function App() {
+  const [cnt, setcnt] = useState(0);
+
+  function render() {
+    setcnt(12);
+  }
+  return (
+    <div className="container">
+      <h1>{cnt}</h1>
+      <button onClick={render}>+</button>
+    </div>
+  );
+}
+
+export default App;
+Here above first h1 will show cnt = 0 on screen but as the button is clicked it will update the state of our hook usestate and update the value of usestate which will update the value of cnt
