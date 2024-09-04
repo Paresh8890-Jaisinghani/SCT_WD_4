@@ -98,3 +98,86 @@ function App() {
 
 export default App;
 Here above first h1 will show cnt = 0 on screen but as the button is clicked it will update the state of our hook usestate and update the value of usestate which will update the value of cnt
+
+
+
+### onMouseOver , onMouseOut ### 
+
+whenever any eventhandlers are triggered event is passed through it 
+like : onSubmit = {handelsubmit}
+ev -- event
+handelsubmit(ev){
+  ev.preventDeafault();
+
+}
+
+
+
+### spread operator ### (...prevValue)
+ const [contact, setContact] = useState({
+    fName: "",
+    lName: "",
+    email: "",
+  });
+
+  function handelchange(ev) {
+    const { value, name } = ev.target;
+
+    setContact((prevValue) => {
+      return {
+        ...prevValue,
+        [name]: value,
+      };
+    });
+  }
+
+
+  ### todo items added using hooks,mapping,spread operator ### 
+  import React, { useState } from "react";
+
+function App() {
+  const [todo, settodo] = useState("");
+  const [todoadded, settodoadded] = useState([]);
+
+  function handelchange(ev) {
+    const detail = ev.target.value;
+    settodo(detail);
+  }
+
+  function handelclick(ev) {
+    const todoitem = todo;
+    settodoadded((prevValue) => {
+      return [...prevValue, todoitem];
+    });
+    settodo("");
+  }
+
+  return (
+    <div className="container">
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <div className="form">
+        <input
+          name="tododetail"
+          type="text"
+          value={todo}
+          onChange={handelchange}
+        />
+        <button onClick={handelclick}>
+          <span>Add</span>
+        </button>
+      </div>
+      <div>
+        <ul>
+          {todoadded.map((items) => {
+            return <li>{items}</li>;
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
