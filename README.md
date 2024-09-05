@@ -181,3 +181,30 @@ function App() {
 
 export default App;
 
+
+
+
+### line-through property in todoapp ###
+import React, { useState } from "react";
+
+const TODoItem = (props) => {
+  const [clicked, setclicked] = useState(false);
+
+  function handleclick() {
+    return setclicked(!clicked);
+  }
+
+  return (
+    <div onClick={handleclick}>
+      <li style={{ textDecoration: clicked ? "line-through" : null }}>
+        {props.text}
+      </li>
+    </div>
+  );
+};
+
+export default TODoItem;
+
+
+### deleteitem From items array ###
+### React component Tree ###
