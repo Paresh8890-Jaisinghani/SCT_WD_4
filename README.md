@@ -208,3 +208,11 @@ export default TODoItem;
 
 ### deleteitem From items array ###
 ### React component Tree ###
+
+
+
+### Final ShowDown ### 
+1.In CreateAres.jsx render title and content field using hooks and update the states
+2.Passing the title from CreateArea.jsx to App.jsx from handlepass function by passing props
+3.add note to the item array in App.jsx using map functon
+4.add timestamp in App.jsx
